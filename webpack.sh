@@ -1,0 +1,1 @@
+webpack --config ./MODULES/ES6/promise/webpack.config.js --color
