@@ -10,3 +10,4 @@ console.log(require.extensions['.js'].toString());
  *   '.node': [Function: dlopen] }
  */
 
+console.log(__dirname)
