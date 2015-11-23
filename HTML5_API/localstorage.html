@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localstorage API</title>
+</head>
+<body>
+<!--localstorage 对同源策略的页面采用广播机制，浏览器对目前访问同样站点的所有窗口发送消息-->
+<input type="button" value="清空数据" onclick="localStorage.clear()"/> <br>
+<input type="button" value="加载测试" onclick="begin()"/><br>
+
+<input type="button" value="描述 localstorage" onclick="test()"/>
+<div id="root"></div>
+<input type="button" value="移除test后的localstorage" onclick="test1()"/>
+<div id="root1"></div>
+<input type="button" value="对localstorage赋值" onclick="test2()"/>
+<div id="root2"></div>
+
+<script>
+    function begin(){
+        localStorage.setItem('test','test localstorage');//setItem方法
+        localStorage.setItem('test1','test1 localstorage');//setItem方法
+        localStorage.getItem('test');//getItem方法
+        for(var i=0;i<localStorage.length;i++){
+            var name = localStorage.key(i);
+            var value = localStorage.getItem(name);
+        }
+    }
+
+    function test(){
+        document.getElementById('root').innerHTML = JSON.stringify(localStorage)
+    }
+    function test1(){
+        localStorage.removeItem('test');
+        document.getElementById('root1').innerHTML = JSON.stringify(localStorage)
+    }
+    function test2(){
+        localStorage['test1']='hello world';
+        document.getElementById('root2').innerHTML = JSON.stringify(localStorage)
+    }
+</script>
+</body>
+</html>
