@@ -15,8 +15,9 @@
     "package"
   ],
   "devDependencies": {
-    "babel-core": "^5.4.7",
-    "babel-loader": "^5.1.2",
+    "babel": "^6.0.15",
+    "babel-core": "^5.8.23",
+    "babel-loader": "^5.3.2",
     "css-loader": "^0.16.0",
     "gulp-open": "^1.0.0",
     "react-hot-loader": "^1.2.7",
@@ -29,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/slashhuang/node-demo/issues"
   },
-  "homepage": "https://github.com/slashhuang/node-demo#readme"
+  "homepage": "https://github.com/slashhuang/node-demo#readme",
+  "dependencies": {
+    "extend": "^3.0.0"
+  }
 }

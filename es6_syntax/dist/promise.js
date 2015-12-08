@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "664788aeda99b9a0e78a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "eff2b2b1d9563d909992"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -225,7 +225,7 @@
 /******/ 			hotSetStatus("prepare");
 /******/ 			hotCallback = callback;
 /******/ 			hotUpdate = {};
-/******/ 			var chunkId = 0;
+/******/ 			var chunkId = 1;
 /******/ 			{ // eslint-disable-line no-lone-blocks
 /******/ 				/*globals chunkId */
 /******/ 				hotEnsureUpdateChunk(chunkId);
@@ -535,7 +535,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/static/";
+/******/ 	__webpack_require__.p = "";
 
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -548,7 +548,7 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	eval("/**\n * Created by slashhuang on 15/11/18.\n */\n//所谓Promise，就是一个对象，用来传递异步操作的消息\n'use strict';\n\nvar dom = document.getElementById('promise');\nvar results = document.getElementById('results');\n\n//Promise实例的状态变为Resolved，就会触发then方法绑定的回调函数\nfunction then_catch() {\n\n    var p1 = new Promise(function (resolve, reject) {\n        setTimeout(function () {\n            return resolve('测试promise');\n        }, 500);\n    });\n    var p2 = new Promise(function (resolve) {\n        setTimeout(function () {\n            return resolve(p1);\n        }, 1000);\n    });\n    p2.then(function (result) {\n        return results.innerHTML = result;\n    });\n    //catch为then(null,rejection)的别名\n    p2['catch'](function (error) {\n        return results.innerHTML = error;\n    });\n}\n\n//如果Promise状态已经变成resolved，再抛出错误是无效的\nfunction no_effect() {\n    var promise = new Promise(function (resolve, reject) {\n        resolve(\"ok\");\n        throw new Error('test');\n    });\n    promise.then(setTimeout(function (value) {\n        results.innerHTML = value;\n    }, 2000))['catch'](setTimeout(function () {\n        alert('error');\n    }, 2000));\n}\n\n//点击测试\ndom.addEventListener('click', function () {\n    then_catch();\n    no_effect();\n});\n\n/*****************\n ** WEBPACK FOOTER\n ** ./es6_syntax/promise/promise.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./es6_syntax/promise/promise.js?");
+	eval("/**\n * Created by slashhuang on 15/11/18.\n */\n//所谓Promise，就是一个对象，用来传递异步操作的消息\n'use strict';\n\nvar dom = document.getElementById('promise');\nvar results = document.getElementById('results');\n\n//Promise实例的状态变为Resolved，就会触发then方法绑定的回调函数\nfunction then_catch() {\n\n    var p1 = new Promise(function (resolve, reject) {\n        setTimeout(function () {\n            return resolve('测试promise');\n        }, 500);\n    });\n    var p2 = new Promise(function (resolve) {\n        setTimeout(function () {\n            return resolve(p1);\n        }, 1000);\n    });\n    p2.then(function (result) {\n        return results.innerHTML = result;\n    });\n    //catch为then(null,rejection)的别名\n    p2['catch'](function (error) {\n        return results.innerHTML = error;\n    });\n}\n\n//如果Promise状态已经变成resolved，再抛出错误是无效的\nfunction no_effect() {\n    var promise = new Promise(function (resolve, reject) {\n        resolve(\"ok\");\n        throw new Error('test');\n    });\n    promise.then(setTimeout(function (value) {\n        results.innerHTML = value;\n    }, 2000))['catch'](setTimeout(function () {\n        alert('error');\n    }, 2000));\n}\n\n//点击测试\ndom.addEventListener('click', function () {\n    then_catch();\n    no_effect();\n});\n\n/*****************\n ** WEBPACK FOOTER\n ** ./es6_syntax/promise/promise.js\n ** module id = 0\n ** module chunks = 1\n **/\n//# sourceURL=webpack:///./es6_syntax/promise/promise.js?");
 
 /***/ }
 /******/ ]);

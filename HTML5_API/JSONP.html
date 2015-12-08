@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSONP</title>
+</head>
+<body>
+
+<div id="json" onclick="JSONP_TEST()">点击</div>
+<script>
+    var flightHandler = function(data){
+        alert('hello');
+        alert(JSON.stringify(data))
+    };
+    function JSONP_TEST(){
+
+        // 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）
+        var url = "http://localhost:8000/jsonp_test.js?callback=test";
+        // 创建script标签，设置其属性
+        var script =document.createElement('script');
+        script.src=url;
+        document.body.appendChild(script);
+    }
+</script>
+
+</body>
+</html>
